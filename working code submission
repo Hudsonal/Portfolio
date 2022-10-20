@@ -1,0 +1,38 @@
+void sort(vector<Course>&a) {
+
+        sort(a.begin(), a.end(), [](Course a, Course b) { return a.courseId < b.courseId; });
+
+    }
+
+    
+
+
+   
+
+int main(int userInput) {
+    vector<Course> courses;
+    string start;
+    string end;
+    int vectorEnd = courses.size();
+    displayMenu(userInput);
+    string csvPath;
+    csvPath = "test.csv";
+    switch (userInput){
+    case 1:
+        loadDataStructure(csvPath);
+    case 2:
+        sort(courses);
+        for_each(courses.begin(),
+            courses.end(),
+            [](const auto& elem) {
+
+                // printing one by one element
+                // separated with space
+                cout << elem << " " << endl;
+            });
+        
+        break;
+    case 3: 
+    default:
+        break;
+    }
